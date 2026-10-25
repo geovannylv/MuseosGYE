@@ -38,13 +38,15 @@ body {
 h1,
 h2,
 h3,
+h4,
 p {
   margin-top: 0;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   color: var(--color-verde-oscuro);
   font-family: var(--fuente-titulos);
   line-height: 1.15;
@@ -56,6 +58,10 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.15rem;
 }
 
 a {
@@ -188,63 +194,59 @@ section > p {
   font-size: clamp(1.05rem, 2vw, 1.2rem);
 }
 
-/* ---------- Tarjetas de museos ---------- */
-#explora {
+/* ---------- Comparación de museos ---------- */
+#explora > p {
+  margin-bottom: 2rem;
+}
+
+.comparacion-museos {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
 }
 
-#explora > h2,
-#explora > p {
-  grid-column: 1 / -1;
-  margin-bottom: 0;
-}
-
-#explora article {
+.museo-comparado {
   display: flex;
   flex-direction: column;
-  min-height: 15rem;
   padding: 1.75rem;
   border-top: 5px solid var(--color-terra);
   border-radius: 0.75rem;
   background: var(--color-marfil);
 }
 
-#explora article h3 {
+#maac,
+#museo-del-cacao {
+  scroll-margin-top: 1rem;
+}
+
+.museo-comparado h3 {
+  min-height: 3.5rem;
   margin-bottom: 0.75rem;
 }
 
-#explora article p {
+.museo-comparado p {
   color: var(--color-texto-suave);
 }
 
-#explora article p:last-child {
+.descripcion-museo {
+  min-height: 10.5rem;
+}
+
+.museo-comparado h4 {
+  margin-bottom: 0.7rem;
+}
+
+.enlace-museo {
   margin-top: auto;
   margin-bottom: 0;
 }
 
-#explora article a {
+.enlace-museo a {
   color: var(--color-terra-oscuro);
 }
 
-#explora article a:hover {
-  color: var(--color-verde-oscuro);
-}
-
-/* ---------- Secciones de detalle ---------- */
-#maac,
-#museo-del-cacao {
-  border-left: 0.45rem solid var(--color-verde-medio);
-}
-
-#maac article,
-#museo-del-cacao article {
-  max-width: 68ch;
-}
-
 .recurso-visual {
-  margin: 2rem 0;
+  margin: 1.5rem 0;
 }
 
 .recurso-visual img {
@@ -270,6 +272,169 @@ section > p {
 
 .lista-fuentes li + li {
   margin-top: 0.75rem;
+}
+
+/* ---------- Encuesta ---------- */
+.formulario-encuesta {
+  max-width: 48rem;
+  margin-top: 2rem;
+}
+
+.ayuda-obligatoria {
+  margin: 1.5rem 0 -0.75rem;
+  color: var(--color-texto-suave);
+  font-size: 0.9rem;
+}
+
+.ayuda-obligatoria span,
+.campo-formulario > label > span[aria-hidden],
+.campo-formulario > p > span[aria-hidden] {
+  color: var(--color-terra-oscuro);
+  font-weight: 700;
+}
+
+.formulario-encuesta fieldset {
+  margin: 0 0 1.25rem;
+  padding: 1.5rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 0.75rem;
+}
+
+.formulario-encuesta legend {
+  padding: 0 0.4rem;
+  color: var(--color-verde-oscuro);
+  font-family: var(--fuente-titulos);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.campo-formulario + .campo-formulario {
+  margin-top: 1.25rem;
+}
+
+.campo-formulario > label,
+.campo-formulario > p {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--color-texto);
+  font-weight: 700;
+}
+
+.campo-formulario label span,
+.campo-formulario small {
+  color: var(--color-texto-suave);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.formulario-encuesta select,
+.formulario-encuesta textarea {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 0.45rem;
+  background: #fff;
+  color: var(--color-texto);
+  font: inherit;
+}
+
+.formulario-encuesta textarea {
+  resize: vertical;
+}
+
+.opciones-formulario {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.opciones-formulario label,
+.participacion-voluntaria {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  color: var(--color-texto);
+  font-weight: 400;
+}
+
+.formulario-encuesta input[type="checkbox"],
+.formulario-encuesta input[type="radio"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0.25rem 0 0;
+  accent-color: var(--color-verde-medio);
+}
+
+.formulario-encuesta select:focus-visible,
+.formulario-encuesta textarea:focus-visible,
+.formulario-encuesta input:focus-visible,
+.formulario-encuesta button:focus-visible {
+  outline: 3px solid var(--color-terra);
+  outline-offset: 3px;
+}
+
+.participacion-voluntaria {
+  margin: 1.25rem 0;
+}
+
+.formulario-encuesta button {
+  padding: 0.75rem 1.1rem;
+  border: 1px solid var(--color-terra-oscuro);
+  border-radius: 0.45rem;
+  background: var(--color-terra);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.formulario-encuesta button:hover {
+  border-color: var(--color-verde-oscuro);
+  background: var(--color-terra-oscuro);
+}
+
+.mensaje-encuesta {
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  border-left: 0.3rem solid var(--color-verde-medio);
+  background: #e4eee7;
+  color: var(--color-texto);
+}
+
+/* ---------- Mapas ---------- */
+.mapas-museos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.mapa-museo {
+  padding: 1.25rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 0.75rem;
+  background: var(--color-marfil);
+}
+
+.mapa-museo h3 {
+  margin-bottom: 1rem;
+}
+
+.mapa-museo iframe {
+  display: block;
+  width: 100%;
+  min-height: 17rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 0.45rem;
+}
+
+.mapa-museo p {
+  margin: 0.9rem 0 0;
+}
+
+.atribucion-mapa {
+  margin: 1rem 0 0;
+  color: var(--color-texto-suave);
+  font-size: 0.88rem;
 }
 
 aside {
@@ -332,13 +497,20 @@ footer p + p {
     padding: 1.5rem;
   }
 
-  #explora {
+  .comparacion-museos,
+  .mapas-museos {
     grid-template-columns: 1fr;
   }
 
-  #explora > h2,
-  #explora > p {
-    grid-column: auto;
+  .museo-comparado h3,
+  .descripcion-museo {
+    min-height: 0;
+  }
+
+  .museo-comparado,
+  .mapa-museo,
+  .formulario-encuesta fieldset {
+    padding: 1.25rem;
   }
 }
 
